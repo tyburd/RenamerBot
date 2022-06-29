@@ -7,6 +7,7 @@ from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOc
 import re
 import logging
 import signal
+import markdown
 import asyncio
 from ..translations.trans import Trans
 from ..maneuvers.ExecutorManager import ExecutorManager
