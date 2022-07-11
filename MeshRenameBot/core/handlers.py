@@ -49,6 +49,10 @@ def add_handlers(client: Client) -> None:
 
 async def start_handler(client: Client, msg: Message) -> None:
     await msg.reply(Trans.START_MSG, quote=True)
+    await reply_markup = InlineKeyboardMarkup([
+		[InlineKeyboardButton('⋆ Support ⋆', url='https://t.me/isabella_support'),
+		 InlineKeyboardButton('⋆ 𝙾𝚠𝚗𝚎𝚛 ⋆', url='tg://user')]])
+        
 
 
 async def rename_handler(client: Client, msg: Message) -> None:
