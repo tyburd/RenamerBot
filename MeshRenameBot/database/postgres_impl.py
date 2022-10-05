@@ -203,3 +203,9 @@ class UserDB(DataBaseHandle):
             self.ccur(cur)
             self.set_mode(self.MODE_SAME_AS_SENT, user_id)
             return self.MODE_SAME_AS_SENT
+            
+    def get_users(self):
+        sql = "SELECT * FROM ttk_users"
+        cur = self.scur(dictcur=True)
+        cur.execute(sql)
+        return [desc["user_id"] for desc in cur.description]
