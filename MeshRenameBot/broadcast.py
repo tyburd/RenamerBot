@@ -4,7 +4,7 @@ from database.user_db import get_all_chats
 import os
 from .core.get_config import get_var
 
-@rbot.on_message(filters.command("broadcast") & filters.user(int(Config.OWNER_ID)))
+@Client.on_message(filters.command("broadcast") & filters.user(int(Config.OWNER_ID)))
 async def bcast(client, message):
     if message.reply_to_message:
         MSG = message.reply_to_message
@@ -32,7 +32,7 @@ async def bcast(client, message):
       os.remove("ErrorReport.txt")
     await m.delete()
 
-@rbot.on_message(filters.command("stats") & filters.user(int(Config.OWNER_ID)))
+@Client.on_message(filters.command("stats") & filters.user(int(Config.OWNER_ID)))
 async def gistat(_, message):
     al = get_all_chats()
     await message.reply_text(f"Total Chats in Database - {len(al)}", quote=True)
