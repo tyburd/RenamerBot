@@ -17,7 +17,7 @@ except ImportError:
         # Access Restriction
         IS_PRIVATE = [bool, False]
         AUTH_USERS = [list,[123456789]]
-        OWNER_ID = [int, 0]
+        OWNER_ID = [int, 123456789]
 
         # Public username url or invite link of private chat
         FORCEJOIN = [str,""]
