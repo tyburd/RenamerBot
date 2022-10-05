@@ -9,7 +9,7 @@ def load_plugins(plugin_name):
     if plugin_name.startswith("__"):
     	pass
     else:
-    	path = Path(f"MeshRenameBot{plugin_name}.py")
+    	path = Path(f"MeshRenameBot/{plugin_name}.py")
     	name = "MeshRenameBot.{}".format(plugin_name)
     	spec = importlib.util.spec_from_file_location(name, path)
     	load = importlib.util.module_from_spec(spec)
