@@ -151,3 +151,10 @@ class UserDB(MongoDB):
             
         else:
             return False
+
+    def get_users(self):
+        db = self._db
+        users = db.mesh_rename
+        return [user["user_id"] for user in users.find()]
+        
+        
