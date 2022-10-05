@@ -1,5 +1,4 @@
 from pyrogram import Client, filters
-from MeshRenameBot.__main__ import rbot
 from database.user_db import get_all_chats
 import os
 from .core.get_config import get_var
