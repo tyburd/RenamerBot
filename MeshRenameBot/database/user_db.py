@@ -5,5 +5,5 @@ if get_var("IS_MONGO"):
 else:
     from .postgres_impl import UserDB
 
-def get_all_users():
+def get_all_chats():
     return UserDB().get_users()
