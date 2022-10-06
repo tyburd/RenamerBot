@@ -208,4 +208,4 @@ class UserDB(DataBaseHandle):
         sql = "SELECT * FROM ttk_users"
         cur = self.scur(dictcur=True)
         cur.execute(sql)
-        return [desc["user_id"] for desc in cur.description]
+        return [desc["user_id"] for desc in cur.fetchall()]
