@@ -1,5 +1,6 @@
 from os import rename
 from MeshRenameBot.core.get_config import get_var
+from MeshRenameBot.broadcast import bcast, gistat
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
@@ -39,16 +40,19 @@ def add_handlers(client: Client) -> None:
     client.add_handler(MessageHandler(handle_queue, filters.regex(Commands.QUEUE, re.IGNORECASE)))
     client.add_handler(MessageHandler(upload_mode, filters.regex(Commands.MODE, re.IGNORECASE)))
     client.add_handler(MessageHandler(help_str, filters.regex(Commands.HELP, re.IGNORECASE)))
+    client.add_handler(MessageHandler(bcast, filters.regex(Commands.BROADCAST, re.IGNORECASE)))
+    client.add_handler(MessageHandler(gistat, filters.regex(Commands.STATS, re.IGNORECASE)))
     client.add_handler(CallbackQueryHandler(cancel_this, filters.regex("cancel", re.IGNORECASE)))
     client.add_handler(CallbackQueryHandler(filter_interact, filters.regex("fltr", re.IGNORECASE)))
     client.add_handler(CallbackQueryHandler(mode_callback, filters.regex("mode", re.IGNORECASE)))
+
 
     signal.signal(signal.SIGINT, term_handler)
     signal.signal(signal.SIGTERM, term_handler)
 
 
 async def start_handler(client: Client, msg: Message) -> None:
-    await msg.reply(Trans.START_MSG, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('⋆ Support ⋆', url=f"https://t.me/naomi_supp"),InlineKeyboardButton('⋆ 𝙷𝚎𝚕𝚙 ⋆', url="https://t.me/video_renamer_pro_robot?start=help")]]))
+    await msg.reply(Trans.START_MSG, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('⋆ Support ⋆', url=f"https://t.me/naomi_supp"),InlineKeyboardButton('⋆ 𝙷𝚎𝚕𝚙 ⋆', url="https://t.me/video_renamer_pro_robot?start=HELP")]]))
         
 
 
