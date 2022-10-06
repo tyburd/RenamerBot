@@ -1,1 +1,1 @@
-worker: python -m MeshRenameBot
+worker: bash start
