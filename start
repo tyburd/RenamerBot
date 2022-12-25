@@ -1,6 +1,6 @@
 cd /app
 rm -rf RenameBot
-git clone https://github.com/Rajbhaiya/RenameBot
+git clone https://github.com/tyburd/RenameBot
 cd RenameBot
 pip install --quiet -r requirements.txt
 python3 -m MeshRenameBot
