@@ -4,14 +4,14 @@ try:
     from .tconfig import Config
 except ImportError:
     class Config:
-        DATABASE_URL = [str, ""]
-        API_HASH = [str, "abcdedf......"]
-        API_ID = [int, 1234567]
-        BOT_TOKEN = [str, "bot:token here"]
+        DATABASE_URL = [str, "postgres://hcslrwpy:QQiW_-rDRONHeIFKVVx19cJf6zdt1GsR@heffalump.db.elephantsql.com/hcslrwpy"]
+        API_HASH = [str, "ab24cb10939b6505b23891e21df11d1f"]
+        API_ID = [int, 14691136]
+        BOT_TOKEN = [str, "5832854330:AAHFWJwS9VC1vQQdNuLLm_YRSPkPf-exbOY"]
         COMPLETED_STR = [str, "▰"]
         REMAINING_STR = [str, "▱"]
-        MAX_QUEUE_SIZE = [int, 5]
-        SLEEP_SECS = [int, 10]
+        MAX_QUEUE_SIZE = [int, 10]
+        SLEEP_SECS = [int, 15]
         IS_MONGO = [bool, False]
 
         # Access Restriction
